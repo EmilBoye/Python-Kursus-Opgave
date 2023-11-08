@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="container p-5 mt-5 rounded">
+    <h2 class="mb-4 text-white">Tilføj en ny note:</h2>
+    <form action="/add" method="POST">
+        <div class="mb-3">
+            <label for="officerName" class="form-label text-white">Politibetjents Navn:</label>
+            <input type="text" class="form-control" id="officerName" name="officer_name" required>
+        </div>
+        <div class="mb-3">
+            <label for="reason" class="form-label text-white">Årsag:</label>
+            <input type="text" class="form-control" id="reason" name="reason" required>
+        </div>
+        <div class="mb-3">
+            <label for="thought" class="form-label text-white">Referat:</label>
+            <textarea class="form-control" id="thought" name="thought" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Tilføj Note</button>
+    </form>
+</div>
+{% endblock %}

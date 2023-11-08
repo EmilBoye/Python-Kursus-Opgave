@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<div class="container text-wrap p-5 mt-5 rounded">
+    <h1 class="mb-4 text-white">Rediger Note</h1>
+
+    <!-- Redigeringsformular -->
+    <form method="POST">
+        <div class="mb-3">  
+            <label for="officer_name" class="form-label text-white">Navn på betjent:</label>
+            <input type="text" class="form-control" id="officer_name" name="officer_name" value="{{ note[1] }}" required>
+        </div>
+        <div class="mb-3">
+            <label for="reason" class="form-label text-white">Årsag:</label>
+            <input type="text" class="form-control" id="reason" name="reason" value="{{ note[2] }}" required>
+        </div>
+        <div class="mb-3">
+            <label for="thought" class="form-label text-white">Referat:</label>
+            <textarea class="form-control" id="thought" name="thought" rows="4" required>{{ note[3] }}</textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Gem ændringer</button>
+    </form>
+</div>
+
+{% endblock %}
